@@ -24,19 +24,16 @@ while True:
     # Read a single byte (4 bytes) from the specified DB
 
     # Axis X1
-    byte_array = client.db_read(db_number, start_byte, 4)
-    value = snap7.util.get_real(byte_array, 0)  # Convert the byte array to a floating-point number
+    byte_array_x1 = client.db_read(db_number, start_byte, 4)
+    value_x1 = snap7.util.get_real(byte_array_x1, 0)  # Convert the byte array to a floating-point number
     # Print the value read from Axis X1
-    print("Axis X1 Value:", value)
+    print("Axis X1 Value:", value_x1)
 
     # Axis Z1
-    byte_array2 = client.db_read(db_number, 4, 4)
-    value2 = snap7.util.get_real(byte_array2, 0)  # Convert the byte array to a floating-point number
+    byte_array_z1 = client.db_read(db_number, 4, 4)
+    value_z1 = snap7.util.get_real(byte_array_z1, 0)  # Convert the byte array to a floating-point number
     # Print the value read from Axis Z1
-    print("Axis Z1 Value:", value2)
+    print("Axis Z1 Value:", value_z1)
 
-
-# disconnect from the PLC
+# Disconnect from the PLC
 client.disconnect()
-
-
